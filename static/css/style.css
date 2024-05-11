@@ -49,11 +49,11 @@ h5 {
 
 hr {
     margin: 1.5vw 0;
-    border-color: #01020a;
+    border-color: #121314;
 }
 
 section {
-    margin: 100px 0;
+    padding: 100px 0;
 }
 
 
@@ -281,6 +281,10 @@ span {
     animation-range: entry 20% cover 30%;
 }
 
+#map{
+    background-color: #121314;
+}
+
 /* Play Time */
 .play-time {
     display: flex;
@@ -403,7 +407,7 @@ span {
 
 .game {
     width: 100%;
-    margin: 200px 0;
+    margin: 100px 0;
 }
 
 .top {
@@ -472,6 +476,13 @@ span {
 
 .bg{
     background-color: #01020a;
+}
+
+/* Catalog - PS4 */
+
+#PS4{
+    padding-top: 100px;
+    background-color: #121314;
 }
 
 /* Footer */
