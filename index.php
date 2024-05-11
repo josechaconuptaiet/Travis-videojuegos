@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,17 +28,36 @@
                     <a class="nav-link" href="./index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./quienessomos.html">Quienes somos</a>
+                    <a class="nav-link" href="./views/aboutus.php">Quienes somos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./static/pages/catalogo.html">Juegos</a>
+                    <a class="nav-link" href="./views/catalogo.php">Juegos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./views/chat.php">Social</a>
                 </li>
             </ul>
+            <?php
+            if (isset($_SESSION["username"])) {
+            ?>
+                <div class="session">
+                    <a class="nav-link" href="./controllers/logout-controller.php">Cerrar sesion</a>
+                </div>
+            <?php
+            } else {
+            ?>
+                <div class="session">
+                    <a class="nav-link" href="./views/login.php">Iniciar sesion</a>
+                </div>
+            <?php
+            }
+            ?>
+
         </nav>
         <div class="index-header-container">
             <div class="index-title-container">
                 <h1><span>TRAVIS</span><br />VIDEOJUEGOS</h1>
-                <button type="button" class="button">Conocenos <i class="fa-solid fa-arrow-right"></i></button>
+                <button type="button" class="button"><a href="./views/aboutus.php">Conocenos</a><i class="fa-solid fa-arrow-right"></i></button>
             </div>
             <div class="widget-container">
                 <div class="widget">
@@ -47,9 +70,13 @@
                 </div>
             </div>
         </div>
+
+        <div class="section-arrow">
+            <a href="#juega"><i class="fa-solid fa-arrow-down"></i></a>
+        </div>
     </header>
     <!-- Section One -->
-    <section>
+    <section id="juega">
         <div class="section-title">
             <h4>CATALOGO</h4>
             <h2>Juega</h2>
@@ -60,7 +87,7 @@
                 <div class="play-content">
                     <h3>Play Time</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque, explicabo placeat similique laudantium distinctio magnam ipsum esse quo perspiciatis voluptas quia adipisci minus id numquam eius necessitatibus tempore cupiditate?</p>
-                    <button type="button" class="button"><a href="./static/pages/catalogo.html">Ver catalogo </a><i class="fa-solid fa-arrow-right"></i></button>
+                    <button type="button" class="button"><a href="./views/catalogo.php">Ver catalogo </a><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 <div class="play-image">
                     <img src="./static/assets/imgs/Play-time.webp" alt="">
@@ -148,6 +175,7 @@
             </div>
         </div>
     </footer>
+    <script src="./static/js/smooth-scroll.js"></script>
 </body>
 
 </html>

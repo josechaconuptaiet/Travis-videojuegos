@@ -56,6 +56,45 @@ section {
     padding: 100px 0;
 }
 
+.section-arrow{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: 20px;
+}
+
+.section-arrow i{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    color: #01020a;
+    transition: scale 0.25s;
+    cursor: pointer;
+    animation: arrow 4s infinite both;
+    font-size: 25px;
+}
+
+.section-arrow i:hover{
+    scale: 1.1;
+}
+
+.section-arrow i::before{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff5b;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+}
+
+.session{
+    display: flex;
+}
 
 /* Button Style */
 
@@ -523,34 +562,6 @@ span {
     align-items: end;
 }
 
-
-/* KeyFrames */
-@keyframes enhance-header {
-    to {
-        background-color: #01020a;
-    }
-}
-
-@keyframes reveal-position {
-    from {
-        left: -500px;
-    }
-    
-    to {
-        left: 0px;
-    }
-}
-
-@keyframes reveal-opacity {
-    from {
-        opacity: 0;
-    }
-    
-    to {
-        opacity: 1;
-    }
-}
-
 .slidder {
     display: flex;
     justify-content: center;
@@ -673,5 +684,54 @@ span {
 @media screen and (max-width: 600px) {
     .wrapper .carousel {
         grid-auto-columns: 100%;
+    }
+}
+
+
+/* KeyFrames */
+@keyframes enhance-header {
+    to {
+        background-color: #01020a;
+    }
+}
+
+@keyframes reveal-position {
+    from {
+        left: -500px;
+    }
+    
+    to {
+        left: 0px;
+    }
+}
+
+@keyframes reveal-opacity {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes arrow{
+    0%{
+        top: 0px;
+    }
+    25%{
+        top: 10px;
+    }
+
+    50%{
+        top: 0;
+    }
+
+    75%{
+        top: 10px;
+    }
+
+    100%{
+        top: 0;
     }
 }
