@@ -46,15 +46,15 @@ if($resultado->num_rows > 0){
 //Encriptar contraseña
 
 $password_hash = password_hash($password, PASSWORD_BCRYPT);
-echo $password_hash;
 
 //Enviar los datos a la base de datos
 $query = $db->query("INSERT INTO users(username, email, password) VALUES ('$username', '$email', '$password_hash')");
-echo $query;
+
 
 if ($query) {
     session_start();
     $_SESSION["username"] = $username;
+    $_SESSION["id"] = $user_id;
 
     header('Location: '. '../index.php');
 }

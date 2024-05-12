@@ -40,7 +40,7 @@ session_start();
     <!--Body-->
     <div class="form-section">
         <div class="form-container">
-            <div class="form-content">
+            <div class="form-content margin">
                 <h1>Bienvenido a Travis videojuegos</h1>
                 <p>Ya tienes cuenta? <a href="./login.php">Iniciar sesion</a></p>
                 <div class="form">

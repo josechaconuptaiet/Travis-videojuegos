@@ -87,7 +87,7 @@ session_start();
                 <div class="play-content">
                     <h3>Play Time</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eaque, explicabo placeat similique laudantium distinctio magnam ipsum esse quo perspiciatis voluptas quia adipisci minus id numquam eius necessitatibus tempore cupiditate?</p>
-                    <button type="button" class="button"><a href="./views/catalogo.php">Ver catalogo </a><i class="fa-solid fa-arrow-right"></i></button>
+                    <button type="button" class="button" ><a href="./views/catalogo.php">Ver catalogo </a><i class="fa-solid fa-arrow-right"></i></button>
                 </div>
                 <div class="play-image">
                     <img src="./static/assets/imgs/Play-time.webp" alt="">

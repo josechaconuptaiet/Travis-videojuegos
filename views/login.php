@@ -42,7 +42,7 @@ session_start();
             <img src="../static/assets/imgs/login.webp" alt="">
         </div>
         <div class="form-container">
-            <div class="form-content">
+            <div class="form-content margin">
                 <h1>Bienvenido a Travis videojuegos</h1>
                 <p>Aun no te has registrado? <a href="./register.php">Registrate</a></p>
                 <div class="form">

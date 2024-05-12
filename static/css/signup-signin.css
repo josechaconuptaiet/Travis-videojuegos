@@ -7,7 +7,7 @@
 .form-container{
     display: flex;
     justify-content: center;
-    margin: 0 192px;
+
     width: 80%;
     height: 100%;
 }
@@ -21,6 +21,10 @@
     width: 100%;
     height: 99.6%;
     object-fit: cover;
+}
+
+.margin{
+    margin: 0 126px;
 }
 
 .form-content{
@@ -65,18 +69,25 @@
     gap: 25px;
 }
 
-.input input{
+.input input, .input textarea{
     color: #666666;
     background-color: #03040B;
     border: none;
     border-radius: 10px;
     border: solid 2px #090a0e;
     height: 50px;
-    padding: 0 20px;
-    margin: 5px 0;
+    padding: 10px 15px;
 }
 
-.input input:focus{
+
+
+.input textarea{
+   
+    resize: vertical;
+}
+
+
+.input input:focus, .input textarea:focus{
     border: none;
     outline: solid 2px #4221E3;
 }

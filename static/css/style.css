@@ -3,6 +3,27 @@
     src: url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 }
 
+/* Esto aplica el estilo a todas las barras de desplazamiento en la página */
+::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  /* Estilo del track (la "vía" por la que se desplaza la barra) */
+  ::-webkit-scrollbar-track {
+    background: #01020a; /* Fondo oscuro */
+  }
+  
+  /* Estilo del handle (la "barra" que se desplaza) */
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* Color gris para un aspecto minimalista */
+  }
+  
+  /* Estilo del handle al pasar el mouse */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color gris oscuro al pasar el mouse */
+  }
+  
+
 /* Default  */
 
 body {
@@ -510,7 +531,7 @@ span {
     width: 100%;
     padding: 0;
     margin: 0;
-    background-image: url("../assets/imgs/bg-catalogo.jpg");
+    background-image: url("../assets/imgs/bg-catalogo.webp");
 }
 
 .bg{

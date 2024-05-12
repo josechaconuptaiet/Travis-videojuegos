@@ -40,7 +40,7 @@ session_start();
             if (isset($_SESSION["username"])) {
             ?>
                 <div class="session">
-                    <a class="nav-link" href="./controllers/logout-controller.php">Cerrar sesion</a>
+                    <a class="nav-link" href="../controllers/logout-controller.php">Cerrar sesion</a>
                 </div>
             <?php
             } else {

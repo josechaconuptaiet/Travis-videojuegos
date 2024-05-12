@@ -31,7 +31,7 @@ session_start();
                 <a class="nav-link" href="./catalogo.php">Juegos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./views/chat.php">Social</a>
+                <a class="nav-link" href="./chat.php">Social</a>
             </li>
         </ul>
         <?php
