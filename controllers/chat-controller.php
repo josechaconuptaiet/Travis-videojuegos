@@ -1,12 +1,19 @@
+
 <?php
 session_start();
 include("../lib/db.php");
 
+$username = $_SESSION["username"];
+
+
+if (!isset($_SESSION["username"])) {
+    return null;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_SESSION["username"];
-    $text = $_POST["comment"];
+    $title = $_POST["title"];
+    $text = $_POST["description"];
     $text = nl2br($text);
-    $thread_id = $_GET["id"];
 
     $query_id = $db->prepare('SELECT * FROM users WHERE username = ?');
     $query_id->bind_param("s", $username);
@@ -18,21 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $data["User_id"];
             $fecha_actual = date('Y-m-d H:i:s');
 
-            $query = $db->prepare("INSERT INTO `comments`(`User_id`, `Thread_id`, `Text`, `CreationDate`) VALUES (?,?,?,?)");
-            $query->bind_param('ssss', $id, $thread_id, $text, $fecha_actual);
+            $query = $db->prepare("INSERT INTO `threads`(`User_id`, `Title`, `Text`, `CreationDate`) VALUES (?,?,?,?)");
+            $query->bind_param('ssss', $id, $title, $text, $fecha_actual);
             $query->execute();
 
-            echo "<script>history.go(-1);</script>";
+            header('Location: ' . '../views/chat.php');
         }
     }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $id = $_GET["id"];
     if (isset($_GET["id"])) {
         $id = $_GET["id"];
-        $delete = $db->query("DELETE FROM `comments` WHERE `id`='$id'");
+        $delete = $db->query("DELETE FROM `threads` WHERE `id`='$id'");
 
-        echo "<script>history.go(-1);</script>";
+        header('Location: ' . '../views/chat.php');
     }
 }

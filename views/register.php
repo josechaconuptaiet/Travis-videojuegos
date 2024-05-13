@@ -62,7 +62,7 @@ session_start();
                             <input type="password" name="cpassword" id="" required>
                             <ul>
                                 <li>Un caracter en mayusculas</li>
-                                <li>Usa 8 o mas caracteres</li>
+                                <li>Usa 2 o mas caracteres</li>
                                 <li>Un caracter especial</li>
                                 <li>Un caracter en minusculas</li>
                                 <li>Un numero</li>

@@ -18,7 +18,7 @@ if($lusername == 0 || $lemail == 0){
 }
 
 if ($lpassword >= 16 || $lpassword <= 2) {
-    echo "El largo de la contraseña debe ser maximo 8 caracteres y minimo 2";
+    echo "El largo de la contraseña debe ser maximo 16 caracteres y minimo 2";
     return null;
 }
 

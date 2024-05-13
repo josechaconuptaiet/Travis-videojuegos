@@ -48,61 +48,62 @@ JOIN users ON threads.User_id = users.User_id;
             ?>
         </nav>
     </header>
+    <div class="lateral-nav">
+        <ul class="navbar-nav colum">
+            <a href="../index.php">
+                <li class="lateral-item">
+                    <i class="fa-sharp fa-solid fa-house"></i>
+                    <p>Home</p>
+                </li>
+            </a>
+            <a href="./aboutus.php">
+                <li class="lateral-item">
+                    <i class="fa-sharp fa-solid fa-circle-info"></i>
+                    <p>Quienes somos</p>
+                </li>
+            </a>
+            <a href="./catalogo.php">
+                <li class="lateral-item">
+                    <i class="fa-solid fa-puzzle-piece"></i>
+                    <p>Juegos</p>
+                </li>
+            </a>
+            <a href="./chat.php">
+                <li class="lateral-item">
+                    <i class="fa-sharp fa-regular fa-user"></i>
+                    <p>Social</p>
+                </li>
+            </a>
+        </ul>
+        <hr>
+        <?php
+        if (isset($_SESSION["username"])) {
+        ?>
+            <div class="options">
+                <div class="lateral-item" id="create-post">
+                    <i class="fa-sharp fa-regular fa-plus"></i>
+                    <p>Crear un nuevo post</p>
+                </div>
+            </div>
+        <?php
+        } else {
+        ?>
+            <div class="options">
+                <a href="./login.php">
+                    <div class="lateral-item">
+                        <i class="fa-sharp fa-regular fa-plus"></i>
+                        <p>Inicia sesion para postear</p>
+                    </div>
+                </a>
+            </div>
+        <?php
+        }
+        ?>
+
+    </div>
     <!--Chat-->
     <div class="chat">
-        <div class="lateral-nav">
-            <ul class="navbar-nav colum">
-                <a href="../index.php">
-                    <li class="lateral-item">
-                        <i class="fa-sharp fa-solid fa-house"></i>
-                        <p>Home</p>
-                    </li>
-                </a>
-                <a href="./aboutus.php">
-                    <li class="lateral-item">
-                        <i class="fa-sharp fa-solid fa-circle-info"></i>
-                        <p>Quienes somos</p>
-                    </li>
-                </a>
-                <a href="./catalogo.php">
-                    <li class="lateral-item">
-                        <i class="fa-solid fa-puzzle-piece"></i>
-                        <p>Juegos</p>
-                    </li>
-                </a>
-                <a href="./chat.php">
-                    <li class="lateral-item">
-                        <i class="fa-sharp fa-regular fa-user"></i>
-                        <p>Social</p>
-                    </li>
-                </a>
-            </ul>
-            <hr>
-            <?php
-            if (isset($_SESSION["username"])) {
-            ?>
-                <div class="options">
-                    <div class="lateral-item" id="create-post">
-                        <i class="fa-sharp fa-regular fa-plus"></i>
-                        <p>Crear un nuevo post</p>
-                    </div>
-                </div>
-            <?php
-            } else {
-            ?>
-                <div class="options">
-                    <a href="./login.php">
-                        <div class="lateral-item">
-                            <i class="fa-sharp fa-regular fa-plus"></i>
-                            <p>Inicia sesion para postear</p>
-                        </div>
-                    </a>
-                </div>
-            <?php
-            }
-            ?>
 
-        </div>
         <!--Publicacion-->
         <div class="post-container">
             <?php
@@ -113,18 +114,21 @@ JOIN users ON threads.User_id = users.User_id;
                     $texto .= '...';
             ?>
                     <div class="post">
-                        <a href="./post.php?id=<?= $data["id"] ?>">
-                            <div class="post-content">
+                        <div class="post-content">
+                            <a href="./post.php?id=<?= $data["id"] ?>">
                                 <div class="post-user">
-
-                                    <p><?= $data["username"] ?></p>
+                                    <div class="user">
+                                        <img src="../static/assets/imgs/imagenes-de-perfil/profile-picture.png" alt="">
+                                        <p><?= $data["username"] ?></p>
+                                    </div>
                                 </div>
                                 <h5><?= $data["Title"] ?></h5>
                                 <p><?= $texto ?></p>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                         <hr>
                     </div>
+
             <?php
 
                 }
@@ -140,10 +144,10 @@ JOIN users ON threads.User_id = users.User_id;
                 <div class="form-content">
                     <div class="modal-top">
                         <h5>Crea una nueva publicacion</h5>
-                        <i class="fa-solid fa-xmark"></i>
+                        <i class="fa-solid fa-xmark modal-close"></i>
                     </div>
                     <div class="form">
-                        <form action="../controllers/post-controller.php" method="post">
+                        <form action="../controllers/chat-controller.php" method="post">
                             <div class="input">
                                 <label for="title">Titulo</label>
                                 <input type="text" name="title" id="" required>
@@ -159,6 +163,8 @@ JOIN users ON threads.User_id = users.User_id;
             </div>
         </div>
     </div>
+   
+    <script src="../static/js/vista-chat.js"></script>
     <script src="../static/js/postModal.js"></script>
 </body>
 
